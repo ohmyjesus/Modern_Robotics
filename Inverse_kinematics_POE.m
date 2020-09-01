@@ -6,7 +6,7 @@ function[q] = Inverse_kinematics_POE(q0,Td)
 theta = q0;
 for i = 1:1000
    disp(i)
-   T_sb = Forward_kinematics(theta);
+   T_sb = Forward_kinematics_POE(theta);
    T_bd = inv(T_sb)*Td;  %以e为底
    Vb_frame = logm(T_bd);
    v = Vb_frame(1:3,4);
